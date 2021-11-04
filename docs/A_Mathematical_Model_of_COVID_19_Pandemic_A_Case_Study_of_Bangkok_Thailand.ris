@@ -1,0 +1,18 @@
+TY  - JOUR
+A2  - Nishizawa, Kazuhisa
+AU  - Riyapan, Pakwan
+AU  - Shuaib, Sherif Eneye
+AU  - Intarasit, Arthit
+PY  - 2021
+DA  - 2021/03/31
+TI  - A Mathematical Model of COVID-19 Pandemic: A Case Study of Bangkok, Thailand
+SP  - 6664483
+VL  - 2021
+AB  - In this study, we propose a new mathematical model and analyze it to understand the transmission dynamics of the COVID-19 pandemic in Bangkok, Thailand. It is divided into seven compartmental classes, namely, susceptible <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M1"><mml:mfenced open="(" close=")"><mml:mrow><mml:mi>S</mml:mi></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> exposed <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M2"><mml:mfenced open="(" close=")"><mml:mrow><mml:mi>E</mml:mi></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> symptomatically infected <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M3"><mml:mfenced open="(" close=")"><mml:mrow><mml:msub><mml:mrow><mml:mi>I</mml:mi></mml:mrow><mml:mrow><mml:mi>s</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> asymptomatically infected <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M4"><mml:mfenced open="(" close=")"><mml:mrow><mml:msub><mml:mrow><mml:mi>I</mml:mi></mml:mrow><mml:mrow><mml:mi>a</mml:mi></mml:mrow></mml:msub></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> quarantined <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M5"><mml:mfenced open="(" close=")"><mml:mrow><mml:mi>Q</mml:mi></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> recovered <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M6"><mml:mfenced open="(" close=")"><mml:mrow><mml:mi>R</mml:mi></mml:mrow></mml:mfenced><mml:mo>,</mml:mo></mml:math></inline-formula> and death <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M7"><mml:mfenced open="(" close=")"><mml:mrow><mml:mi>D</mml:mi></mml:mrow></mml:mfenced></mml:math></inline-formula>, respectively. The next-generation matrix approach was used to compute the basic reproduction number denoted as <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M8"><mml:msub><mml:mrow><mml:mi>R</mml:mi></mml:mrow><mml:mrow><mml:mtext>cvd</mml:mtext><mml:mn>19</mml:mn></mml:mrow></mml:msub></mml:math></inline-formula> of the proposed model. The results show that the disease-free equilibrium is globally asymptotically stable if <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M9"><mml:msub><mml:mrow><mml:mi>R</mml:mi></mml:mrow><mml:mrow><mml:mtext>cvd</mml:mtext><mml:mn>19</mml:mn></mml:mrow></mml:msub><mml:mo>&#x003C;</mml:mo><mml:mn>1</mml:mn></mml:math></inline-formula>. On the other hand, the global asymptotic stability of the endemic equilibrium occurs if <inline-formula><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" id="M10"><mml:msub><mml:mrow><mml:mi>R</mml:mi></mml:mrow><mml:mrow><mml:mtext>cvd</mml:mtext><mml:mn>19</mml:mn></mml:mrow></mml:msub><mml:mo>&#x003E;</mml:mo><mml:mn>1</mml:mn></mml:math></inline-formula>. The mathematical analysis of the model is supported using numerical simulations. Moreover, the model&#x2019;s analysis and numerical results prove that the consistent use of face masks would go on a long way in reducing the COVID-19 pandemic.
+SN  - 1748-670X
+UR  - https://doi.org/10.1155/2021/6664483
+DO  - 10.1155/2021/6664483
+JF  - Computational and Mathematical Methods in Medicine
+PB  - Hindawi
+KW  - 
+ER  - 
