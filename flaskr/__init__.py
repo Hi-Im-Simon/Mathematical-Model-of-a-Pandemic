@@ -16,7 +16,7 @@ def create_app():
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
 
-    @app.route('/')
+    @app.route('/', methods=('GET', 'POST'))
     def page_default():
         return 'hewofddd'
 
@@ -27,5 +27,8 @@ def create_app():
     # initializes database's functionalities
     from . import db
     db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app

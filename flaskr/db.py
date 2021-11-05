@@ -17,7 +17,7 @@ def init_app(app):
 def init_db():
     db = get_db()
     # opens a file with the database
-    with current_app.open_resource('schene.sql') as f_db:
+    with current_app.open_resource('scheme.sql') as f_db:
         db.executescript(f_db.read().decode('utf8'))
 
 
@@ -34,10 +34,7 @@ def get_db():
     # connection is stored in g
     # connection is reused instead of creating another one if one already exists
     if 'db' not in g:
-        g.db = sqlite3.connect(
-            current_app.config['DATABASE'],
-            detect_types = sqlite3.PARSE_DECLTYPES
-        )
+        g.db = sqlite3.connect('flaskr/database.db')
         g.db.row_factory = sqlite3.Row
     return g.db
 
