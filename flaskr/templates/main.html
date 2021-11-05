@@ -1,0 +1,14 @@
+<title>{{ title }}</title>
+<div>
+    <h1>Main page...</h1>
+    <form action="/" method="POST">
+        <input type="number" name="input1">
+        <input type="number" name="input2">
+        <input type="submit" value="Add">
+    </form>
+
+    <br>
+    {% for i in i1 %}
+        <p>{{ i.input1 }}</p>
+    {% endfor %}
+</div>

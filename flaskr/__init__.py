@@ -1,34 +1,54 @@
-import os
+from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 
-from flask import Flask
+from werkzeug.utils import redirect
 
 
-def create_app():
-    # create the app
-    # instance_relative_config tells the app that configuration files are relative to the instance folder
-    app = Flask(__name__, instance_relative_config=True)
+# create the app
+# instance_relative_config tells the app that configuration files are relative to the instance folder
+app = Flask(__name__, instance_relative_config=True)
 
-    # configurate the app
-    app.config.from_mapping(
-        # secret key to keep data safe, should be changed later
-        SECRET_KEY='dev',
-        # path to the database
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+# configurate the app
+# config a database file
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+# avoid error messages
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    @app.route('/', methods=('GET', 'POST'))
-    def page_default():
-        return 'hewofddd'
+# create a SQLAlchemy database handler
+db = SQLAlchemy(app)
 
-    @app.route('/eo')
-    def page_eo():
-        return 'harambe'
 
-    # initializes database's functionalities
-    from . import db
-    db.init_app(app)
+# design a database scheme
+class Database(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    input1 = db.Column(db.Integer, nullable=False)
+    input2 = db.Column(db.Integer, nullable=False)
 
-    from . import auth
-    app.register_blueprint(auth.bp)
 
-    return app
+# the main page
+@app.route('/', methods=['POST', 'GET'])
+def page_default():
+    if request.method == 'POST':
+        # if submit is pressed, collect data from inputs and add it to the database
+        data = Database(
+            input1 = request.form['input1'],
+            input2 = request.form['input2'],
+        )
+
+        db.session.add(data)
+        db.session.commit()
+        # then redirect back to the same page (it also reloads the page)
+        return redirect('/')
+
+    else:
+        # or if the page is reloaded, send data to the template and display it
+        return render_template(
+            'main.html',
+            title = 'The main page!',
+            i1 = Database.query
+        )
+
+# additional page, just to make sure subpages work properly
+@app.route('/eo')
+def page_eo():
+    return 'harambe'
