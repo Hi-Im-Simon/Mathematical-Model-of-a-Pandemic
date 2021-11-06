@@ -1,9 +1,10 @@
+# move to the project directory
 > cd .../project_name
-
-# sets 'flaskr' containing the '__init__' file as the main directory
-> $env:FLASK_APP = "flaskr"
-
-# development mode lets us see changes real-time after refreshing the page
+# set 'app' folder containing the '__init__' file as the environment directory
+> $env:FLASK_APP = "app"
+# development mode lets us see changes real-time after refreshing the page, change to production later on
 > $env:FLASK_ENV = "development"
-
 > flask run
+
+
+# or simply run the app.py file (this option doesn't include a debugging mode)
