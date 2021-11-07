@@ -14,5 +14,5 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # create a SQLAlchemy database handler
 db = SQLAlchemy(app)
 
-# initiate other scrips
+# initiate other scripts
 from app import routes, models
