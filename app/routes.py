@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request 
 from app import app, db
 from app.models import Database
-#import init_values
+from app.values import init_values
 
 
 # the main page
@@ -9,10 +9,10 @@ from app.models import Database
 def page_default():
     if request.method == 'POST':
         # if submit is pressed, collect data from inputs and add it to the database
-        data = Database(
-            mask_rate = request.form['mask_rate'],
-            mask_fall_rate = request.form['mask_fall_rate'],
-        )
+        input_values = {}
+        for key in init_values.keys():
+            input_values[key] = request.form[key]
+        data = Database(input_values)
 
         db.session.add(data)
         db.session.commit()
@@ -20,25 +20,21 @@ def page_default():
         return redirect('/')
 
     else:
+        inputs = Database.query
         # add initial values if database is empty
         if len([i for i in Database.query]) > 0:
-            initials = Database.query[-1]
+            initials = inputs[-1]
         else:
-            initials = Database(
-                # initial values declared here
-                mask_rate=0.1,
-                mask_fall_rate=0.5,
-            )
+            initials = Database(init_values)
             db.session.add(initials)
             db.session.commit()
-        
+            
         # or if the page is reloaded, send data to the template and display it
         return render_template(
             'main.html',
-            title='The main page!',
-            keys=Database.__table__.columns.keys(),
-            inputs=Database.query,
-            initials=initials
+            title = 'The main page!',
+            inputs = inputs,
+            initials = initials,
         )
 
 

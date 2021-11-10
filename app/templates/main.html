@@ -12,34 +12,8 @@
 
 <main>
     <h1>A Mathematical Model of COVID-19 Pandemic</h1>
-    <!-- initial (value="x") values are set in `../static/javascript/init_values.js` -->
-    <form action="/" method="POST">
-            <div class="row-input">
-                <input type="range"
-                    name="mask_rate"
-                    step="0.01"
-                    value="{{ initials.mask_rate }}"
-                >
-                <input type="number"
-                    step="0.01"
-                    value="{{ initials.mask_rate }}"
-                >
-            </div>
-
-            <div class="row-input">
-                <input type="range"
-                    name="mask_fall_rate"
-                    step="0.01"
-                    value="{{ initials.mask_fall_rate }}"
-                >
-                <input type="number"
-                    step="0.01"
-                    value="{{ initials.mask_fall_rate }}"
-                >
-            </div>
-
-        <input type="submit">
-    </form>
+    
+    {% include "form.html" %}
 
     {% for i in inputs %}
         <p>{{ i.mask_rate }}</p>
@@ -47,5 +21,5 @@
 </main>
 
 </body>
-<script src="../static/javascript/init_values.js"></script>
+<script src="../static/javascript/main_script.js"></script>
 </html>
