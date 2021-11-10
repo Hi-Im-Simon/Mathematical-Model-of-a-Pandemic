@@ -9,8 +9,8 @@ def page_default():
     if request.method == 'POST':
         # if submit is pressed, collect data from inputs and add it to the database
         data = Database(
-            input1=request.form['input1'],
-            input2=request.form['input2'],
+            mask_rate = request.form['mask-rate'],
+            mask_fall_rate = request.form['mask-fall-rate'],
         )
 
         db.session.add(data)
@@ -27,7 +27,9 @@ def page_default():
         )
 
 
-# additional page, just to make sure subpages work properly
-@app.route('/eo')
+# clears the database on enter and returns harambe 🐒
+@app.route('/clear')
 def page_eo():
+    db.session.query(Database).delete()
+    db.session.commit()
     return 'harambe'
