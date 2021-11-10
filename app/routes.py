@@ -38,9 +38,9 @@ def page_default():
         )
 
 
-# clears the database on enter and returns harambe 🐒
+# clears the database on enter
 @app.route('/clear')
 def page_eo():
     db.session.query(Database).delete()
     db.session.commit()
-    return 'harambe'
+    return redirect('/')
