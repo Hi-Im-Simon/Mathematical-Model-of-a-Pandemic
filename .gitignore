@@ -13,3 +13,9 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# sqlite
+.sqlite
+
+# html
+chart.html
