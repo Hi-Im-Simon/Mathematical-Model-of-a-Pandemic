@@ -46,5 +46,5 @@ def page_eo():
     db.session.query(Database).delete()
     db.session.commit()
     # also empty a chart file
-    open('app/templates/chart.html', 'w').close()
+    open('app/templates/chart.html', 'w+').close()
     return redirect('/')

@@ -17,7 +17,7 @@ def generate_chart():
 
     script, div = components(plot)
 
-    file = open('app/templates/chart.html', 'w')
+    file = open('app/templates/chart.html', 'w+')
     file.write(script)
     file.write(div)
     file.close()

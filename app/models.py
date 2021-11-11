@@ -10,3 +10,7 @@ class Database(db.Model):
     def __init__(self, values):
         self.mask_rate = values['mask_rate']
         self.mask_fall_rate = values['mask_fall_rate']
+
+
+# initialize the database model into the .sqlite like
+db.create_all()
