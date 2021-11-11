@@ -27,9 +27,9 @@ out = [S]
 
 for i in range(10):
     dS = Rh - Bt_s * (1 - Ps * Xi) * S * I_s - Bt_a * (1 - Ps * Xi) * S * I_a - Mu * S
-    dE = Bt_s * (1 - Ps * Xi) * S * I_s + Bt_a * (1 - Ps * Xi) * S * I_a - ()
+    #dE = Bt_s * (1 - Ps * Xi) * S * I_s + Bt_a * (1 - Ps * Xi) * S * I_a - ()
     S += int(dS)
     out.append(S)
 
-print(out)
+#print(out)
 

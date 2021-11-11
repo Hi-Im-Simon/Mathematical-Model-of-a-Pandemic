@@ -2,6 +2,7 @@ from flask import render_template, redirect, request
 from app import app, db
 from app.models import Database
 from app.values import init_values
+from app.chart import generate_chart
 
 
 # the main page
@@ -13,9 +14,10 @@ def page_default():
         for key in init_values.keys():
             input_values[key] = request.form[key]
         data = Database(input_values)
-
         db.session.add(data)
         db.session.commit()
+        
+        generate_chart()
         # then redirect back to the same page (it also reloads the page)
         return redirect('/')
 
@@ -43,4 +45,6 @@ def page_default():
 def page_eo():
     db.session.query(Database).delete()
     db.session.commit()
+    # also empty a chart file
+    open('app/templates/chart.html', 'w').close()
     return redirect('/')
