@@ -14,6 +14,9 @@ def generate_chart():
     y = [i * i * par1 - par2 * 10000 for i in x]
         
     plot.circle(x=x, y=y)
+    
+    plot.toolbar.logo = None
+    plot.toolbar_location = None
 
     script, div = components(plot)
 
