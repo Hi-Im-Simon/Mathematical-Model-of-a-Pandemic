@@ -15,7 +15,7 @@ build/
 *.egg-info/
 
 # sqlite
-.sqlite
+database.sqlite
 
 # html
 chart.html
