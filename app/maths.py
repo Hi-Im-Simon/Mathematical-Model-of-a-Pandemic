@@ -1,35 +1,54 @@
 # total initial population size
-N = 13680470 # current population, int
+N = 13680480 # current population, int
 
-Rh = 5
-Bt_s = 0.67
-Bt_a = 0.74
-Ps = 0.1 # % wearing masks, float
-Xi = 0.5 # % infected fall because of masks, float
-La_s = 0.1 # % for symptomatic people to get healthy, float
-La_a = 0.1 # % for asymptomatic people to get healthy, float
-La_q = 0.05 # % for people in quarantine people to get healthy, float
-Al_s = 0.2 # % of symptomatic people isolating, float
-Al_a = 0.2 # % of asymptomatic people isolating, float
-De_s = 0.015 # fatafatality rate for symptomatic people, float
-De_q = 0.015 # fatality rate for people in quarantine, float
-Mu = 3.6529 * 10**-5 # ovrall fatality rate, float
+S = 0.75*N # susceptible class
+I = int(0.005*N) # infected class
+E = N-S-I # exposed class
+Q = 0 # quarantined class
+R = 0 # recovered class
 
-I_s = int(0.04 * N) # current amount of infected people with symptoms, int
-I_a = int(0.01 * N) # current amount of infected people without symptoms, int
-S = N - I_s - I_a # amount of not infected people, int
-Q = 0 # amount of people in quarantine, int
-R = 0 # amount of prople with immunity, int
-D = 0 # amount of deaths, int
-E = S
+Tht = 1.418243e-1 # recruitment rate into susceptible population
+Mu = 5.389301e-2 # natural mortality rate
+Dlt = 6.839696e-1 # infection death rate
+Omg = 2.421307e-2 # progression rate from exposed to infectious class
+Sgm = 2.104874e-1 # rate of loss of immunity
+Tau = 8.270934e-1 # treatment rate for infectious individuals
+Phi = 4.584931e-3 # treatment rate for quarantined individuals
+Psi = 2.999373e-1 # proportion of individuals that maintain social distancing
+Nu = 2.808803e-1 # usage of a face mask and a hand sanitiser by a portion of the population
+Rho = 1.786530e-1 # rate of recovery from infection
+Alph_c = 2.814715e-1 # effective transmission rate
 
-out = [S]
+S_out = [S]
+E_out = [E]
+I_out = [I]
+Q_out = [Q]
+R_out = [R]
 
 for i in range(10):
-    dS = Rh - Bt_s * (1 - Ps * Xi) * S * I_s - Bt_a * (1 - Ps * Xi) * S * I_a - Mu * S
-    #dE = Bt_s * (1 - Ps * Xi) * S * I_s + Bt_a * (1 - Ps * Xi) * S * I_a - ()
+    dS = Tht - (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - Mu*S + Sgm*R
     S += int(dS)
-    out.append(S)
+    S_out.append(S)
 
-#print(out)
+    dE = (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - (Mu + Omg)*E
+    E += int(dE)
+    E_out.append(E)
 
+    dI = Omg*E - (Mu + Dlt + Rho + Tau)*I
+    I += int(dI)
+    I_out.append(I)
+
+    dQ = Rho*I - (Mu + Dlt + Phi)*Q
+    Q += int(dQ)
+    Q_out.append(Q)
+
+    dR = Phi*Q + Tau*I - (Sgm + Mu)*R
+    R += int(dR)
+    R_out.append(R)
+
+
+print(S_out)
+print(E_out)
+print(I_out)
+print(Q_out)
+print(R_out)
