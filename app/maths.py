@@ -27,23 +27,21 @@ R_out = [R]
 
 for i in range(10):
     dS = Tht - (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - Mu*S + Sgm*R
-    S += int(dS)
-    S_out.append(S)
-
     dE = (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - (Mu + Omg)*E
-    E += int(dE)
-    E_out.append(E)
-
     dI = Omg*E - (Mu + Dlt + Rho + Tau)*I
-    I += int(dI)
-    I_out.append(I)
-
     dQ = Rho*I - (Mu + Dlt + Phi)*Q
-    Q += int(dQ)
-    Q_out.append(Q)
-
     dR = Phi*Q + Tau*I - (Sgm + Mu)*R
+
+    S += int(dS)
+    E += int(dE)
+    I += int(dI)
+    Q += int(dQ)
     R += int(dR)
+
+    S_out.append(S)
+    E_out.append(E)
+    I_out.append(I)
+    Q_out.append(Q)
     R_out.append(R)
 
 
