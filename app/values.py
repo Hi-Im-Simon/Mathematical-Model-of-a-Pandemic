@@ -13,7 +13,6 @@ init_values = {
     'protection_usage_rate': 2.808803e-1,  # usage of a face mask and a hand sanitiser by a portion of the population
     'infected_recovery_rate': 1.786530e-1,  # rate of recovery from infection
     'transmission_rate': 2.814715e-1,  #effective transmission rate
-    'pepp': 0.5,
     
     '_time': 100,
 }
