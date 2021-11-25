@@ -1,0 +1,11 @@
+body {
+    background: darkgrey;
+}
+
+main {
+    display: flex;
+}
+
+main > .left {
+    padding: 0 50px;
+}

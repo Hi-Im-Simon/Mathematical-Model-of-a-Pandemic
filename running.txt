@@ -1,0 +1,6 @@
+# move to the project directory and run flask
+> cd .../project_name
+> flask run
+
+# or simply run the app.py file (this option doesn't include a debugging mode)
+> py app.py

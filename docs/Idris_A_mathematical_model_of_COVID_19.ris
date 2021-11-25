@@ -1,0 +1,37 @@
+TY  - JOUR
+DB  - PubMed
+AU  - Ahmed, Idris
+AU  - Modu, Goni Umar
+AU  - Yusuf, Abdullahi
+AU  - Kumam, Poom
+AU  - Yusuf, Ibrahim
+T1  - A mathematical model of Coronavirus Disease (COVID-19) containing asymptomatic and symptomatic classes
+LA  - eng
+SN  - 2211-3797
+Y1  - 2021/02/
+ET  - 2021/01/06
+AB  - The research work in this paper attempts to describe the outbreak of Coronavirus Disease 2019 (COVID-19) with the help of a mathematical model using both the Ordinary Differential Equation (ODE) and Fractional Differential Equation. The spread of the disease has been on the increase across the globe for some time with no end in sight. The research used the data of COVID-19 cases in Nigeria for the numerical simulation which has been fitted to the model. We brought in the consideration of both asymptomatic and symptomatic infected individuals with the fact that an exposed individual is either sent to quarantine first or move to one of the infected classes with the possibility that susceptible individual can also move to quarantined class directly. It was found that the proposed model has two equilibrium points; the disease-free equilibrium point (DFE) and the endemic equilibrium point (E1) . Stability analysis of the equilibrium points shows (E0) is locally asymptotically stable whenever the basic reproduction number, R0 < 1 and (E1) is globally asymptotically stable whenever R0 > 1 . Sensitivity analysis of the parameters in the R0 was conducted and the profile of each state variable was also depicted using the fitted values of the parameters showing the spread of the disease. The most sensitive parameters in the R0 are the contact rate between susceptible individuals and the rate of transfer of individuals from exposed class to symptomatically infected class. Moreover, the basic reproduction number for the data is calculated as R0 ≈ 1.7031 . Existence and uniqueness of solution established via the technique of fixed point theorem. Also, using the least square curve fitting method together with the fminsearch function in the MATLAB optimization toolbox, we obtain the best values for some of the unknown biological parameters involved in the proposed model. Furthermore, we solved the fractional model numerically using the Atangana-Toufik numerical scheme and presenting different forms of graphical results that can be useful in minimizing the infection.
+SP  - 103776
+EP  - 103776
+VL  - 21
+AN  - 33432294
+UR  - https://pubmed.ncbi.nlm.nih.gov/33432294
+DO  - 10.1016/j.rinp.2020.103776
+L2  - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7787076/
+U1  - 33432294[pmid]
+U2  - PMC7787076[pmcid]
+U4  - S2211-3797(20)32186-0[PII]
+J2  - Results Phys
+JF  - Results in physics
+KW  - 34A12
+KW  - 39A30
+KW  - 47H10
+KW  - ABC-fractional operator
+KW  - Basic reproductive number
+KW  - Corona virus
+KW  - Existence and uniqueness
+KW  - Mathematical model
+KW  - Nonlinear differential equations
+KW  - Sensitivity analysis
+PB  - The Author(s). Published by Elsevier B.V.
+ER  - 
