@@ -47,6 +47,17 @@ body {
     background: url('../images/dot-grid.png') repeat;
 }
 
+a, a:visited {
+    color: navy;
+    text-decoration: none;
+}
+
+a:hover, a:visited:hover {
+    background-color: #eeeeee;
+    border-bottom: 1px dotted darkgrey;
+    font-weight: bold;
+}
+
 .container {
     width: 68%;
     margin: auto;
@@ -69,11 +80,10 @@ header h1 {
 main {
     padding: 20px;
     background: #fafafa;
-    display: flex;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 }
 
-main > .left {
+main .left {
     padding: 0 50px;
 }
 
@@ -93,4 +103,8 @@ footer p {
 .bk-root {
     box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
     border: 1px solid grey;
+}
+
+.flex-container {
+    display: flex;
 }

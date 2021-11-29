@@ -21,18 +21,21 @@
             <h1>A Mathematical Model of COVID-19 Pandemic</h1>
         </header>
         <main>
-            <div class="left">
-                {% include "form.html" %}
-
-                {% for i in inputs %}
-                    <p>{{ i.mask_rate }}</p>
-                {% endfor %}
+            <div class="flex-container">
+                <div class="left">
+                    {% include "form.html" %}
+    
+                    {% for i in inputs %}
+                        <p>{{ i.mask_rate }}</p>
+                    {% endfor %}
+                </div>
+    
+                <div class="right">
+                    {% include "chart.html" ignore missing %}
+                    <canvas id="chart_1" style="width:100%;max-width:700px"></canvas>
+                </div>
             </div>
-
-            <div class="right">
-                {% include "chart.html" ignore missing %}
-                <canvas id="chart_1" style="width:100%;max-width:700px"></canvas>
-            </div>
+            <p>For more info, see <a href="../static/docs/Model_matematyczny_epidemii.pdf">model details [PDF] (pl)</a>.</p>
         </main>
         <footer>
             <p>Made by:</p>
