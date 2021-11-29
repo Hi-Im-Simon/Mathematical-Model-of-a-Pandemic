@@ -8,7 +8,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-tables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-gl.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-mathjax.min.js" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
     <link rel="stylesheet" href="../static/css/main_style.css">
     <title>{{ title }}</title>
 </head>
@@ -29,8 +30,10 @@
 
         <div class="right">
             {% include "chart.html" ignore missing %}
+            <canvas id="chart_1" style="width:100%;max-width:700px"></canvas>
         </div>
     </main>
 </body>
 <script src="../static/javascript/main_script.js"></script>
+<script src="../static/javascript/chart_script.js"></script>
 </html>
