@@ -1,12 +1,15 @@
 def do_math(d):
     # total initial population size
     N = 13680480 # current population, int
+    Tp = 1 # sampling interval in days, assume default = 1
 
-    S = 0.75*N # susceptible class
-    I = int(0.005*N) # infected class
-    E = N-S-I # exposed class
-    Q = 0 # quarantined class
+
+    S = N - int(0.0005*N) - int(0.06*N) # susceptible class
+    E = 0 # exposed class
+    I = int(0.0005*N) # infected class
+    Q = int(0.06*N) # quarantined class
     R = 0 # recovered class
+    
     
     Tht = float(d['infection_rate'])
     Mu = float(d['natural_mortality_rate'])
@@ -28,25 +31,29 @@ def do_math(d):
     I_out = [I]
     Q_out = [Q]
     R_out = [R]
+    N_out = [N]
 
     for _ in range(t-1):
-        dS = Tht - (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - Mu*S + Sgm*R
-        dE = (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - (Mu + Omg)*E
-        dI = Omg*E - (Mu + Dlt + Rho + Tau)*I
-        dQ = Rho*I - (Mu + Dlt + Phi)*Q
-        dR = Phi*Q + Tau*I - (Sgm + Mu)*R
+        dS = (Tht - (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - Mu*S + Sgm*R)*Tp
+        dE = ((Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - (Mu + Omg)*E)*Tp
+        dI = (Omg*E - (Mu + Dlt + Rho + Tau)*I)*Tp
+        dQ = (Rho*I - (Mu + Dlt + Phi)*Q)*Tp
+        dR = (Phi*Q + Tau*I - (Sgm + Mu)*R)*Tp
+        dN = (Tht - Mu*N - Dlt*(I+Q))*Tp
 
         S += int(dS)
         E += int(dE)
         I += int(dI)
         Q += int(dQ)
         R += int(dR)
+        N += int(dN)
 
         S_out.append(S)
         E_out.append(E)
         I_out.append(I)
         Q_out.append(Q)
         R_out.append(R)
+        N_out.append(N)
 
 
-    return([S_out, E_out, I_out, Q_out, R_out])
+    return([S_out, E_out, I_out, Q_out, R_out, N_out])
