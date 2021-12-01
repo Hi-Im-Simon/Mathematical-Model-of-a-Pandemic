@@ -16,7 +16,7 @@ social_distancing_rate = 0.02
 mask_effectiveness = 0.5
 social_distancing_effectiveness = 0.85
 
-R0 = (infection_rate*(1-0.5*mask_effectiveness)*(1-social_distancing_effectiveness*social_distancing_rate))/(mortality_rate+recovery_rate)
+R0 = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate))/(mortality_rate+recovery_rate)
 
 T_end = 365
 
