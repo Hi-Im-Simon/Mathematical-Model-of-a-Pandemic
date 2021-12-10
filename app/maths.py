@@ -1,59 +1,58 @@
 def do_math(d):
-    # total initial population size
-    N = 13680480 # current population, int
-    Tp = 1 # sampling interval in days, assume default = 1
+    Tp = 1  # sampling interval in days, assume default = 1 day
 
 
-    S = N - int(0.0005*N) - int(0.06*N) # susceptible class
-    E = 0 # exposed class
-    I = int(0.0005*N) # infected class
-    Q = int(0.06*N) # quarantined class
-    R = 0 # recovered class
+    S = 1368048  # susceptible compartment
+    I = 50  # infected compartment
+    R = 0  # recovered compartment
+    D = 0  # deceased compartment
+    V = 0  # vaccinated compartment
+
+    N_0 = S + I + R + D + V  # max initial population size
+    N = S + I + R + V  # total population size
     
     
-    Tht = float(d['infection_rate'])
-    Mu = float(d['natural_mortality_rate'])
-    Dlt = float(d['infection_death_rate'])
-    Omg = float(d['exposed_to_infected_rate'])
-    Sgm = float(d['immunity_loss_rate'])
-    Tau = float(d['infected_treatment_rate'])
-    Phi = float(d['quarantined_treatment_rate'])
-    Psi = float(d['social_distancing_rate'])
-    Nu = float(d['protection_usage_rate'])
-    Rho = float(d['infected_recovery_rate'])
-    Alph_c = float(d['transmission_rate'])
-    
+    infection_rate = float(d['infection_rate'])
+    recovery_rate = float(d['recovery_rate'])
+    mortality_rate = float(d['mortality_rate'])
+    immunity_loss_rate = float(d['immunity_loss_rate'])
+    mask_rate = float(d['mask_rate'])
+    social_distancing_rate = float(d['social_distancing_rate'])
+    mask_effectiveness = float(d['mask_effectiveness'])
+    social_distancing_effectiveness = float(d['social_distancing_effectiveness'])
+    vaccination_rate = float(d['vaccination_rate'])
+    vaccine_efficacy = float(d['vaccine_efficacy'])
     
     t = int(d['_time'])
 
     S_out = [S]
-    E_out = [E]
     I_out = [I]
-    Q_out = [Q]
     R_out = [R]
+    D_out = [D]
+    V_out = [V]
     N_out = [N]
 
     for _ in range(t-1):
-        dS = (Tht - (Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - Mu*S + Sgm*R)*Tp
-        dE = ((Alph_c*(1-Psi)*(1-Nu)*(E+I)*S)/N - (Mu + Omg)*E)*Tp
-        dI = (Omg*E - (Mu + Dlt + Rho + Tau)*I)*Tp
-        dQ = (Rho*I - (Mu + Dlt + Phi)*Q)*Tp
-        dR = (Phi*Q + Tau*I - (Sgm + Mu)*R)*Tp
-        dN = (Tht - Mu*N - Dlt*(I+Q))*Tp
+        dS = (-1 * infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I*S)/N_0+immunity_loss_rate*R - vaccination_rate*S) * Tp
+        dI = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I*S)/N_0 + (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V/N_0) - (recovery_rate+mortality_rate)*I) * Tp
+        dR = (recovery_rate*I-immunity_loss_rate*R) * Tp
+        dD = (mortality_rate*I) * Tp
+        dV = (vaccination_rate*S - (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V/N_0)) * Tp
+        dN = (dS + dI + dR + dV) * Tp
 
         S += int(dS)
-        E += int(dE)
         I += int(dI)
-        Q += int(dQ)
         R += int(dR)
+        D += int(dD)
+        V += int(dV)
         N += int(dN)
 
         S_out.append(S)
-        E_out.append(E)
         I_out.append(I)
-        Q_out.append(Q)
         R_out.append(R)
+        D_out.append(D)
+        V_out.append(V)
         N_out.append(N)
 
 
-    return([S_out, E_out, I_out, Q_out, R_out, N_out])
+    return([S_out, I_out, R_out, D_out, V_out, N_out])
