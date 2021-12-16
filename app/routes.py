@@ -36,7 +36,7 @@ def page_default():
         # or if the page is reloaded, send data to the template and display it
         return render_template(
             'main.html',
-            title = 'Main page — A Mathematical Model of COVID-19 Pandemic',
+            title = 'Main page — A Mathematical Model of a Pandemic',
             values = values,
             columns = columns,
         )
