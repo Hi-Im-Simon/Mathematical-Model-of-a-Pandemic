@@ -1,4 +1,4 @@
-matplotlib==3.2.1
 bokeh==2.4.1
 Flask==2.0.2
-flask_sqlalchemy==2.5.1
+Flask_SQLAlchemy==2.5.1
+matplotlib==3.4.3
