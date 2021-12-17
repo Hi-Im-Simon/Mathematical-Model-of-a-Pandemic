@@ -21,24 +21,27 @@ vaccination_rate = 1/1000
 vaccine_efficacy = 0.76
 
 R0 = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate))/(mortality_rate+recovery_rate)
-
+Re = ((1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*infection_rate*(S[-1]/N[-1]+(1-vaccine_efficacy)*V[-1]/N[-1]))/(mortality_rate+recovery_rate)
+herd_immunity = (1-(1/R0))/vaccine_efficacy
+print(herd_immunity)
+print(Re)
 T_end = 365
 
 for t in range(1, T_end):
     if (t == 34):
         social_distancing_rate = 0.95
-        R0 = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate))/(mortality_rate+recovery_rate)
-        print(R0)
+        Re = ((1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*infection_rate*(S[-1]/N[-1]+(1-vaccine_efficacy)*V[-1]/N[-1]))/(mortality_rate+recovery_rate)
+        print(Re)
     if (t == 100):
         social_distancing_rate = 0.01
         mask_rate = 0
-        R0 = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate))/(mortality_rate+recovery_rate)
-        print(R0)
+        Re = ((1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*infection_rate*(S[-1]/N[-1]+(1-vaccine_efficacy)*V[-1]/N[-1]))/(mortality_rate+recovery_rate)
+        print(Re)
     dS = -1 * infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I[-1]*S[-1])/N[-1]+immunity_loss_rate*R[-1] - vaccination_rate*S[-1]
-    dI = infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I[-1]*S[-1])/N[-1] + (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V[-1]/N[-1]) - (recovery_rate+mortality_rate)*I[-1]
+    dI = infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I[-1]*S[-1])/N[-1] + (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(I[-1]*V[-1]/N[-1]) - (recovery_rate+mortality_rate)*I[-1]
     dR = recovery_rate*I[-1]-immunity_loss_rate*R[-1]
     dD = mortality_rate*I[-1]
-    dV = vaccination_rate*S[-1] - (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V[-1]/N[-1])
+    dV = vaccination_rate*S[-1] - (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(I[-1]*V[-1]/N[-1])
 
     S.append(S[-1] + dS)
     I.append(I[-1] + dI)

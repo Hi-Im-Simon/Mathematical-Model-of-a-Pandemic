@@ -34,10 +34,10 @@ def do_math(d):
 
     for _ in range(t-1):
         dS = (-1 * infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I*S)/N_0+immunity_loss_rate*R - vaccination_rate*S) * Tp
-        dI = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I*S)/N_0 + (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V/N_0) - (recovery_rate+mortality_rate)*I) * Tp
+        dI = (infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate) * (I*S)/N_0 + (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(I*V/N_0) - (recovery_rate+mortality_rate)*I) * Tp
         dR = (recovery_rate*I-immunity_loss_rate*R) * Tp
         dD = (mortality_rate*I) * Tp
-        dV = (vaccination_rate*S - (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(V/N_0)) * Tp
+        dV = (vaccination_rate*S - (1-vaccine_efficacy)*infection_rate*(1-mask_effectiveness*mask_rate)*(1-social_distancing_effectiveness*social_distancing_rate)*(I*V/N_0)) * Tp
         dN = (dS + dI + dR + dV) * Tp
 
         S += int(dS)
