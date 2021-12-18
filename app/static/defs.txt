@@ -1,0 +1,18 @@
+infection_rate=                     "infection rate"
+recovery_rate=                      "recovery rate"
+mortality_rate=                     "mortality rate"
+immunity_loss_rate=                 "immunity loss rate"
+mask_rate=                          "mask rate"
+social_distancing_rate=             "social distancing rate"
+mask_effectiveness=                 "mask effectiveness"
+social_distancing_effectiveness=    "social distancing effectiveness"
+vaccination_rate=                   "vaccination rate"
+vaccine_efficacy=                   "vaccine efficacy"
+_time=                              "simulation time"
+
+S=
+I=
+R=
+D=
+V=
+N=
