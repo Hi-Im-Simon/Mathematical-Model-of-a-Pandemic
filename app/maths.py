@@ -9,7 +9,7 @@ def do_math(d):
     V = 0  # vaccinated compartment
 
     N_0 = S + I + R + D + V  # max initial population size
-    N = S + I + R + V  # total population size
+    N = S + I + R + V  # total alive population size
     
     
     infection_rate = float(d['infection_rate'])
