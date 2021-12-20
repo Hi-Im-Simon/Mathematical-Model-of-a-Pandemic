@@ -2,8 +2,6 @@ from flask import render_template, redirect, request
 from app import app, db
 from app.models import Database
 from app.values import init_values
-from app.maths import do_math
-from app.chart import generate_chart
 
 
 # the main page
@@ -17,9 +15,6 @@ def page_default():
         data = Database(input_values)
         db.session.add(data)
         db.session.commit()
-        
-        chart_data = do_math(input_values)
-        generate_chart(chart_data)
         # then redirect back to the same page (it also reloads the page)
         return redirect('/')
 

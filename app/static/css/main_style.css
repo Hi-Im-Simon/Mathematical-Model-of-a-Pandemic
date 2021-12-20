@@ -108,3 +108,11 @@ footer p {
 .flex-container {
     display: flex;
 }
+
+.right {
+    width: 100%;
+}
+
+#chart_1 {
+    width:100%;
+}

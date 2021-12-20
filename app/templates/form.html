@@ -6,15 +6,16 @@
 <div class="row-input">
     {{ column_name }}<br>
     <input type="range"
+        name="{{ column_name }}"
         class="connect_following_input"
         step="1e-2" min="0" max="1"
         value="{{ values[column_name] }}"
         oninput="generateChart()"
     >
     <input type="number"
-        name="{{ column_name }}"
         step="1e-10" min="0" max="1"
         value="{{ values[column_name] }}"
+        oninput="generateChart()"
     >
 </div>
 {% endfor %}
@@ -24,14 +25,16 @@
 <div class="row-input">
     _time<br>
     <input type="range"
+        name="_time"
         class="connect_following_input"
         step="1" min="0" max="365"
         value="{{ values['_time'] }}"
+        oninput="generateChart()"
     >
     <input type="number"
-        name="_time"
         step="1" min="0" max="365"
         value="{{ values['_time'] }}"
+        oninput="generateChart()"
     >
 </div>
 
