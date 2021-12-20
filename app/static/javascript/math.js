@@ -8,7 +8,7 @@ function calc(data) {
     V = 0  // vaccinated compartment
 
     N_0 = S + I + R + D + V  // max initial population size
-    N = S + I + R + V  // total population size
+    N = S + I + R + V  // total alive population size
     
     infection_rate = data.get('infection_rate')
     recovery_rate = data.get('recovery_rate')
@@ -31,12 +31,12 @@ function calc(data) {
     N_out = [N]
 
     for (let _ = 0; _ < time - 1; _++) {
-        dS = (-1 * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N_0 + immunity_loss_rate * R - vaccination_rate * S) * Tp
-        dI = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N_0 + (1 - vaccine_efficacy) * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (V / N_0) - (recovery_rate + mortality_rate) * I) * Tp
+        dS = (-1 * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N + immunity_loss_rate * R - vaccination_rate * S) * Tp
+        dI = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * ((I * S) / N + (1 - vaccine_efficacy) * (I * V / N)) - (recovery_rate + mortality_rate) * I) * Tp
         dR = (recovery_rate * I - immunity_loss_rate * R) * Tp
         dD = (mortality_rate * I) * Tp
-        dV = (vaccination_rate * S - (1 - vaccine_efficacy) * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (V / N_0)) * Tp
-        dN = (dS + dI + dR + dV) * Tp
+        dV = (vaccination_rate * S - (1 - vaccine_efficacy) * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * V / N)) * Tp
+        dN = (-1 * mortality_rate * I) * Tp
 
         S += Math.floor(dS)
         I += Math.floor(dI)
