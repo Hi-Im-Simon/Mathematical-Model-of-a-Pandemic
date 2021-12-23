@@ -10,9 +10,9 @@ vaccination_rate=                   "vaccination rate"
 vaccine_efficacy=                   "vaccine efficacy"
 _time=                              "simulation time"
 
-S=
-I=
-R=
-D=
-V=
-N=
+S=                                  "people susceptible to infection"
+I=                                  "infected people"
+R=                                  "recovered people who obtained temporary immunity"
+D=                                  "deaths due to disease"
+V=                                  "vaccinated people"
+N=                                  "alive population"
