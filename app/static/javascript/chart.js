@@ -17,7 +17,7 @@ function getChartData() {
     let form_data = new FormData(document.querySelector('form'));
 
     // creates a list of values from 0 to t
-    let x_values = Array.from(Array(+(form_data.get('_time')) + 1).keys());
+    let x_values = Array.from(Array(+(form_data.get('time')) + 1).keys());
     let y_values_all = calc(form_data);
 
     return [x_values, y_values_all];

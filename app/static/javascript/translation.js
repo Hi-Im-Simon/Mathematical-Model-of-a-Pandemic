@@ -40,7 +40,7 @@ function getTranslations() {
             'EN': 'vaccine efficacy',
             'PL': 'skuteczność szczepień',
         },
-        '_time': {
+        'time': {
             'EN': 'simulation time',
             'PL': 'czas symulacji',
         },

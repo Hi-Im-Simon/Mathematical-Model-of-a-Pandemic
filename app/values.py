@@ -1,7 +1,4 @@
-init_values = {
-    # add _ if you are going to define the input in 'form.html' manually,
-    # or __ (double underscore) if you don't want to sumbit it at all
-    
+init_values = {    
     'infection_rate': 1/4,  # recruitment rate into infected population
     'recovery_rate': 1/12,  # recovery rate
     'mortality_rate': 2/100*1/12,  # infection mortality rate
@@ -13,7 +10,7 @@ init_values = {
     'vaccination_rate': 1/1000,  # proportion of individuals that are being vaccinated per unit of time
     'vaccine_efficacy': 0.76,  # vaccine efficacy
     
-    '_time': 365
+    'time': 365
 }
 
 # might need to manually create an entry in 'models.py' in case of creating a value different than integer type

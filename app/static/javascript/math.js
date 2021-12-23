@@ -21,7 +21,7 @@ function calc(data) {
     vaccination_rate = data.get('vaccination_rate');
     vaccine_efficacy = data.get('vaccine_efficacy');
 
-    time = data.get('_time');
+    time = data.get('time');
 
     S_out = [S];
     I_out = [I];
