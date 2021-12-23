@@ -26,7 +26,7 @@ def page_default():
             db.session.commit()
             
         values = inputs[-1].__dict__
-        names = eval('{' + ''.join([line.strip() for line in open('app/static/javascript/translation.js').readlines()][2:-3]) + '}')
+        names = eval('{' + ''.join([line.strip() for line in open('app/static/javascript/translation.js', encoding='utf-8').readlines()][2:-3]) + '}')
 
             
         # or if the page is reloaded, send data to the template and display it
