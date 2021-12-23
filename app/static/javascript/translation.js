@@ -2,73 +2,73 @@ function getTranslations() {
     translations = {
         'infection_rate': { 
             'EN': 'infection rate',
-            'PL': 'coś',
+            'PL': 'wskaźnik infekcji',
         },
         'recovery_rate': {
             'EN': 'recovery rate',
-            'PL': 'coś',
+            'PL': 'wskaźnik ozdrowień',
         },
         'mortality_rate': {
             'EN': 'mortality rate',
-            'PL': 'coś',
+            'PL': 'wskaźnik śmiertelności',
         },
         'immunity_loss_rate': {
             'EN': 'immunity loss rate',
-            'PL': 'coś',
+            'PL': 'wskaźnik utraty odporności',
         },
         'mask_rate': {
             'EN': 'mask rate',
-            'PL': 'coś',
+            'PL': 'odsetek osób stosujących maseczki',
         },
         'social_distancing_rate': {
             'EN': 'social distancing rate',
-            'PL': 'coś',
+            'PL': 'odsetek osób w izolacji',
         },
         'mask_effectiveness': {
             'EN': 'mask effectivness',
-            'PL': 'coś',
+            'PL': 'skuteczność maseczek',
         },
         'social_distancing_effectiveness': {
             'EN': 'social distancing effectiveness',
-            'PL': 'coś',
+            'PL': 'skuteczność izolacji',
         },
         'vaccination_rate': {
             'EN': 'vaccination rate',
-            'PL': 'coś',
+            'PL': 'wskaźnik wyszczepialności',
         },
         'vaccine_efficacy': {
             'EN': 'vaccine efficacy',
-            'PL': 'coś',
+            'PL': 'skuteczność szczepień',
         },
         '_time': {
             'EN': 'simulation time',
-            'PL': 'coś',
+            'PL': 'czas symulacji',
         },
 
 
         'S': {
-            'EN': 'people susceptible to infection',
-            'PL': 'coś',
+            'EN': 'Susceptible',
+            'PL': 'Niezakażeni',
         },
         'I': {
-            'EN': 'infected people',
-            'PL': 'coś',
+            'EN': 'Infected',
+            'PL': 'Zakażeni',
         },
         'R': {
-            'EN': 'recovered people who obtained temporary immunity',
-            'PL': 'coś',
+            'EN': 'Recovered',
+            'PL': 'Ozdrowieńcy',
         },
         'D': {
-            'EN': 'deaths due to disease',
-            'PL': 'coś',
+            'EN': 'Deceased',
+            'PL': 'Zgony',
         },
         'V': {
-            'EN': 'vaccinated people',
-            'PL': 'coś',
+            'EN': 'Vaccinated',
+            'PL': 'Zaszczepieni',
         },
         'N': {
-            'EN': 'alive population',
-            'PL': 'coś',
+            'EN': 'Alive population',
+            'PL': 'Populacja',
         },
 
 
@@ -78,15 +78,15 @@ function getTranslations() {
         },
         'title': {
             'EN': 'Main page — A Mathematical Model of a Pandemic',
-            'PL': 'Strina główna — Model Matematyczny Pandemii',
+            'PL': 'Strona główna — Model matematyczny epidemii',
         },
         'header_title': {
             'EN': 'A Mathematical Model of a Pandemic',
-            'PL': 'Model Matematyczny Pandemii',
+            'PL': 'Model matematyczny epidemii',
         },
         'more_info_1': {
             'EN': 'For more info, see',
-            'PL': 'Po więcej informacji zobacz',
+            'PL': 'Po więcej informacji, zobacz',
         },
         'more_info_2': {
             'EN': 'model details',
