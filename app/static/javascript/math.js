@@ -32,7 +32,7 @@ function calc(data) {
 
     for (let _ = 0; _ < time - 1; _++) {
         dS = (-1 * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N + immunity_loss_rate * R - vaccination_rate * S) * Tp;
-        dI = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * ((I * S) / N + (1 - vaccine_efficacy) * (I * V / N)) - (recovery_rate + mortality_rate) * I) * Tp;
+        dI = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N + infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (1 - vaccine_efficacy) * (I * V / N) - recovery_rate * I - mortality_rate * I) * Tp;
         dR = (recovery_rate * I - immunity_loss_rate * R) * Tp;
         dD = (mortality_rate * I) * Tp;
         dV = (vaccination_rate * S - (1 - vaccine_efficacy) * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * V / N)) * Tp;
