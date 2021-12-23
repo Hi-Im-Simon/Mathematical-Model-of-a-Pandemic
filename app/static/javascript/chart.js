@@ -1,6 +1,5 @@
 // change the order in which labels should be displayed
 var lines = ['S', 'I', 'R', 'D', 'V', 'N'];
-var language = 'EN';
 
 // change chart lines colors
 var line_colors = {
@@ -14,7 +13,7 @@ var line_colors = {
 
 function getChartData() {
     // reads all data from the HTML form
-    let form_data = new FormData(document.querySelector('form'));
+    let form_data = new FormData(document.querySelector('#input_form'));
 
     // creates a list of values from 0 to t
     let x_values = Array.from(Array(+(form_data.get('time')) + 1).keys());
@@ -41,7 +40,7 @@ function generateChart(action='update') {
         });
 
         for (let i = 0; i < lines.length; i++)
-            chart.data.datasets.push({ data: y_values_all[lines[i]], borderColor: line_colors[lines[i]], label: labels[lines[i]][language], });
+            chart.data.datasets.push({ data: y_values_all[lines[i]], borderColor: line_colors[lines[i]], label: labels[lines[i]][chosen_language], });
     }
     else {
         for (let i = 0; i < lines.length; i++)

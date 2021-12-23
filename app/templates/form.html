@@ -1,8 +1,8 @@
-<form action="/" method="POST">
+<form action="/" method="POST" id="input_form">
 
 {% set column_name = 'infection_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -16,7 +16,7 @@
 
 {% set column_name = 'recovery_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -30,7 +30,7 @@
 
 {% set column_name = 'mortality_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -44,7 +44,7 @@
 
 {% set column_name = 'immunity_loss_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -58,7 +58,7 @@
 
 {% set column_name = 'mask_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -72,7 +72,7 @@
 
 {% set column_name = 'social_distancing_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -86,7 +86,7 @@
 
 {% set column_name = 'mask_effectiveness' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -100,7 +100,7 @@
 
 {% set column_name = 'social_distancing_effectiveness' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -114,7 +114,7 @@
 
 {% set column_name = 'vaccination_rate' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -128,7 +128,7 @@
 
 {% set column_name = 'vaccine_efficacy' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1e-2" min="0" max="1"
@@ -142,7 +142,7 @@
 
 {% set column_name = 'time' %}
 <div class="row_input">
-    {{ names[column_name][language] }}<br>
+    <p>{{ names[column_name][language] }}</p>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="0" max="365"

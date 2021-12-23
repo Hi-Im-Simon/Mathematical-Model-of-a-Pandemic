@@ -11,6 +11,11 @@
 <body>
     <div class="container">
         <header>
+            <form action="/" method="POST" id="choose_language">
+                <input type="text" name="language" style="display: none" value="EN">
+                <input type="submit" value="EN" onclick="document.getElementsByName('language')[0].value = 'EN'">
+                <input type="submit" value="PL" onclick="document.getElementsByName('language')[0].value = 'PL'">
+            </form>
             <h1>{{ names['header_title'][language] }}</h1>
         </header>
         <main>
@@ -31,6 +36,7 @@
         </footer>
     </div>
 </body>
+<script src="../static/javascript/language.js"></script>
 <script src="../static/javascript/math.js"></script>
 <script src="../static/javascript/translation.js"></script>
 <script src="../static/javascript/chart.js"></script>

@@ -116,3 +116,7 @@ footer p {
 #chart_1 {
     width:100%;
 }
+
+.row_input > p {
+    margin-bottom: 0;
+}

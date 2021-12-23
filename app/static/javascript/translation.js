@@ -1,6 +1,6 @@
-function getTranslations() { 
-    translations = {
-        'infection_rate': { 
+function getTranslations() {
+    let translations = {
+        'infection_rate': {
             'EN': 'infection rate',
             'PL': 'wskaźnik infekcji',
         },
