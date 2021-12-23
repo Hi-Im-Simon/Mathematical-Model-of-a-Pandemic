@@ -10,16 +10,16 @@ function calc(data) {
     N_0 = S + I + R + D + V;  // max initial population size
     N = S + I + R + V;  // total alive population size
     
-    infection_rate = data.get('infection_rate');
-    recovery_rate = data.get('recovery_rate');
-    mortality_rate = data.get('mortality_rate');
-    immunity_loss_rate = data.get('immunity_loss_rate');
-    mask_rate = data.get('mask_rate');
-    social_distancing_rate = data.get('social_distancing_rate');
-    mask_effectiveness = data.get('mask_effectiveness');
-    social_distancing_effectiveness = data.get('social_distancing_effectiveness');
-    vaccination_rate = data.get('vaccination_rate');
-    vaccine_efficacy = data.get('vaccine_efficacy');
+    infection_rate = 1 / data.get('infection_rate');
+    recovery_rate = 1 / data.get('recovery_rate');
+    mortality_rate = data.get('mortality_rate') * 0.01 * recovery_rate;
+    immunity_loss_rate = 1 / data.get('immunity_loss_rate');
+    mask_rate = data.get('mask_rate') / 100;
+    social_distancing_rate = data.get('social_distancing_rate') / 100;
+    vaccination_rate = data.get('vaccination_rate') / 1000;
+    mask_effectiveness = data.get('mask_effectiveness') / 100;
+    social_distancing_effectiveness = data.get('social_distancing_effectiveness') / 100;
+    vaccine_efficacy = data.get('vaccine_efficacy') / 100;
 
     time = data.get('time');
 
@@ -30,7 +30,7 @@ function calc(data) {
     V_out = [V];
     N_out = [N];
 
-    for (let _ = 0; _ < time - 1; _++) {
+    for (let _ = 0; _ < time; _++) {
         dS = (-1 * infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N + immunity_loss_rate * R - vaccination_rate * S) * Tp;
         dI = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (I * S) / N + infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (1 - vaccine_efficacy) * (I * V / N) - recovery_rate * I - mortality_rate * I) * Tp;
         dR = (recovery_rate * I - immunity_loss_rate * R) * Tp;
