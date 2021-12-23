@@ -26,14 +26,15 @@ def page_default():
             db.session.commit()
             
         values = inputs[-1].__dict__
-        columns = [key for key in init_values if key[0] != '_']
+        names = eval('{' + ''.join([line.strip() for line in open('app/static/javascript/translation.js').readlines()][2:-3]) + '}')
+
             
         # or if the page is reloaded, send data to the template and display it
         return render_template(
             'main.html',
-            title = 'Main page — A Mathematical Model of a Pandemic',
             values = values,
-            columns = columns,
+            names = names,
+            language = 'EN',
         )
 
 

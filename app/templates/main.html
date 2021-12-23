@@ -3,11 +3,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-widgets.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-tables.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-gl.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/2.4.1/bokeh-mathjax.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../static/css/main_style.css">
@@ -18,31 +13,28 @@
 <body>
     <div class="container">
         <header>
-            <h1>A Mathematical Model of a Pandemic</h1>
+            <h1>{{ names['header_title'][language] }}</h1>
         </header>
         <main>
             <div class="flex-container">
                 <div class="left">
                     {% include "form.html" %}
-    
-                    {% for i in inputs %}
-                        <p>{{ i.mask_rate }}</p>
-                    {% endfor %}
                 </div>
     
                 <div class="right">
                     <canvas class="chart" id="chart_1"></canvas>
                 </div>
             </div>
-            <p>For more info, see <a href="../static/docs/A_Mathematical_Model_of_a_Pandemic.pdf">model details [PDF]</a>.</p>
+            <p>{{ names['more_info_1'][language] }} <a href="../static/docs/A_Mathematical_Model_of_a_Pandemic.pdf">{{ names['more_info_2'][language] }} [PDF]</a>.</p>
         </main>
         <footer>
-            <p>Made by:</p>
+            <p>{{ names['footer_made_by'][language] }}:</p>
             <p>Mikołaj Bartkowiak &bullet; Szymon Stanisławski</p>
         </footer>
     </div>
 </body>
-<script src="../static/javascript/main.js"></script>
 <script src="../static/javascript/math.js"></script>
+<script src="../static/javascript/translation.js"></script>
 <script src="../static/javascript/chart.js"></script>
+<script src="../static/javascript/main.js"></script>
 </html>

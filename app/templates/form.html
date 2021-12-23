@@ -1,43 +1,159 @@
 <form action="/" method="POST">
 
-<!-- automatically assigned inputs (int type) -->
-
-{% for column_name in columns %}
-<div class="row-input">
-    {{ column_name }}<br>
+{% set column_name = 'infection_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
     <input type="range"
         name="{{ column_name }}"
-        class="connect_following_input"
         step="1e-2" min="0" max="1"
         value="{{ values[column_name] }}"
-        oninput="generateChart()"
     >
     <input type="number"
         step="1e-10" min="0" max="1"
         value="{{ values[column_name] }}"
-        oninput="generateChart()"
     >
 </div>
-{% endfor %}
 
-<!-- manually assigned inputs -->
-
-<div class="row-input">
-    _time<br>
+{% set column_name = 'recovery_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
     <input type="range"
-        name="_time"
-        class="connect_following_input"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'mortality_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'immunity_loss_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'mask_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'social_distancing_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'mask_effectiveness' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'social_distancing_effectiveness' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'vaccination_rate' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = 'vaccine_efficacy' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
+        step="1e-2" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+    <input type="number"
+        step="1e-10" min="0" max="1"
+        value="{{ values[column_name] }}"
+    >
+</div>
+
+{% set column_name = '_time' %}
+<div class="row_input">
+    {{ names[column_name][language] }}<br>
+    <input type="range"
+        name="{{ column_name }}"
         step="1" min="0" max="365"
-        value="{{ values['_time'] }}"
-        oninput="generateChart()"
+        value="{{ values[column_name] }}"
     >
     <input type="number"
         step="1" min="0" max="365"
-        value="{{ values['_time'] }}"
-        oninput="generateChart()"
+        value="{{ values[column_name] }}"
     >
 </div>
 
-<input type="submit">
+<input type="submit" value="{{ names['submit_button'][language] }}">
 
 </form>
