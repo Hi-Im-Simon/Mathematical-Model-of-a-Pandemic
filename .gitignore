@@ -2,4 +2,5 @@ chart.html
 database.sqlite
 __pycache__
 .vscode
-language.js
+_language.js
+_database.js
