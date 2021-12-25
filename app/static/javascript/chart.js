@@ -69,7 +69,7 @@ function switch_chart(dest) {
     for (entry in db)
         data_set.set(entry, db[entry][data_set_i]);
     let x_values = Array.from(Array(+(data_set.get('time')) + 1).keys());
-    generateChart(chart_name = 'chart_2', action = 'update', data = [x_values, calc(data_set)]);
+    generateChart(chart_name = 'chart_2', data = [x_values, calc(data_set)], action = 'update');
     document.getElementById('chart_id').innerHTML = data_set_i + 1;
 }
 
