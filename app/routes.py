@@ -41,7 +41,7 @@ def page_default():
     js_db = open('app/static/javascript/_database.js', 'a', encoding='utf-8')
     js_db.write("var db = {\n")
     for line in values:
-        if line is not '_sa_instance_state':
+        if line != '_sa_instance_state':
             js_db.write(f"\t{ line }: { [inputs[i].__dict__[line] for i in range(inputs.count())] },\n")
     js_db.write("}\n")
     js_db.close()
@@ -60,6 +60,4 @@ def page_default():
 def page_eo():
     db.session.query(Database).delete()
     db.session.commit()
-    # also empty a chart file
-    open('app/templates/chart.html', 'w+').close()
     return redirect('/')
