@@ -25,7 +25,17 @@
                 </div>
     
                 <div class="right">
-                    <canvas class="chart" id="chart_1"></canvas>
+                    <div id="chart_1_container">
+                        <canvas class="chart" id="chart_1"></canvas>
+                    </div>
+                    <div id="chart_1_container">
+                        <canvas class="chart" id="chart_2"></canvas>
+                        <center>
+                            <button class="button_left" onclick="switch_chart('left')"><</button>
+                            <button class="button_right" onclick="switch_chart('right')">></button>
+                        </center>
+                        <center><div id="chart_id"></div></center>
+                    </div>
                 </div>
             </div>
             <p>{{ names['more_info_1'][language] }} <a href="../static/docs/A_Mathematical_Model_of_a_Pandemic.pdf">{{ names['more_info_2'][language] }} [PDF]</a>.</p>
@@ -36,9 +46,11 @@
         </footer>
     </div>
 </body>
-<script src="../static/javascript/language.js"></script>
+<script src="../static/javascript/_language.js"></script>
+<script src="../static/javascript/_database.js"></script>
 <script src="../static/javascript/math.js"></script>
 <script src="../static/javascript/translation.js"></script>
 <script src="../static/javascript/chart.js"></script>
+<script src="../static/javascript/chart_nav.js"></script>
 <script src="../static/javascript/main.js"></script>
 </html>

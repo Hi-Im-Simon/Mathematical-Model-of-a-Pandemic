@@ -8,11 +8,11 @@ from app.values import init_values
 @app.route('/', methods=['POST', 'GET'])
 def page_default():
     # to make sure that the language.js file exists
-    open('app/static/javascript/language.js', 'w+', encoding='utf-8').write(f"var chosen_language = 'EN';")
+    open('app/static/javascript/_language.js', 'w+', encoding='utf-8').write(f"var chosen_language = 'EN';")
     if request.method == 'POST':
         # if submit in the language form is pressed, change the value in the language.js file
         if 'language' in request.form:
-            open('app/static/javascript/language.js', 'w', encoding='utf-8').write(f"var chosen_language = '{ request.form['language'] }';")
+            open('app/static/javascript/_language.js', 'w', encoding='utf-8').write(f"var chosen_language = '{ request.form['language'] }';")
         else:
             # if submit in the main form is pressed, collect data from inputs and add it to the database
             input_values = {}
@@ -23,8 +23,9 @@ def page_default():
             db.session.commit()
             # then redirect back to the same page (it also reloads the page)
             return redirect('/')
-
-    inputs = Database.query
+    
+    inputs = Database.query      
+    
     # add initial values to the database if it's empty
     if len([i for i in Database.query]) == 0:
         db.session.add(Database(init_values))
@@ -32,8 +33,18 @@ def page_default():
         
     values = inputs[-1].__dict__
     names = eval('{' + ''.join([line.strip() for line in open('app/static/javascript/translation.js', encoding='utf-8').readlines()][2:-3]) + '}')
-    language = open('app/static/javascript/language.js', 'r', encoding='utf-8').readlines()[0].split()[-1].strip(';').strip("'")
+    language = open('app/static/javascript/_language.js', 'r', encoding='utf-8').readlines()[0].split()[-1].strip(';').strip("'")
     print(language)
+    
+    # creates a file to hold the database content for JS
+    open('app/static/javascript/_database.js', 'w+', encoding='utf-8').close()
+    js_db = open('app/static/javascript/_database.js', 'a', encoding='utf-8')
+    js_db.write("var db = {\n")
+    for line in values:
+        if line is not '_sa_instance_state':
+            js_db.write(f"\t{ line }: { [inputs[i].__dict__[line] for i in range(inputs.count())] },\n")
+    js_db.write("}\n")
+    js_db.close()
         
     # or if the page is reloaded, send data to the template and display it
     return render_template(

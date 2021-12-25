@@ -22,15 +22,14 @@ function getChartData() {
     return [x_values, y_values_all];
 }
 
-function generateChart(action='update') {
-    let t = getChartData();
-    x_values = t[0];
-    y_values_all = t[1];
+function generateChart(chart_name = 'chart_1', action = 'update', data = getChartData()) {
+    x_values = data[0];
+    y_values_all = data[1];
 
     if (action == 'create') {
         let labels = getTranslations();
 
-        chart = new Chart("chart_1", {
+        charts[chart_name] = new Chart(chart_name, {
             type: "line",
             options: {
                 animation: {
@@ -40,15 +39,16 @@ function generateChart(action='update') {
         });
 
         for (let i = 0; i < lines.length; i++)
-            chart.data.datasets.push({ data: y_values_all[lines[i]], borderColor: line_colors[lines[i]], label: labels[lines[i]][chosen_language], });
+            charts[chart_name].data.datasets.push({ data: y_values_all[lines[i]], borderColor: line_colors[lines[i]], label: labels[lines[i]][chosen_language], });
     }
     else {
         for (let i = 0; i < lines.length; i++)
-            chart.data.datasets[i].data = y_values_all[lines[i]];
+            charts[chart_name].data.datasets[i].data = y_values_all[lines[i]];
     }
-    chart.data.labels = x_values;
-    chart.update();
+    charts[chart_name].data.labels = x_values;
+    charts[chart_name].update();
 }
 
-var chart;
-generateChart(action='create');
+var charts = {};
+generateChart(chart_name='chart_1', action='create');
+generateChart(chart_name='chart_2', action='create');
