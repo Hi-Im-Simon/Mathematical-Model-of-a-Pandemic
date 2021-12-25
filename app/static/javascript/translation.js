@@ -2,19 +2,19 @@ function getTranslations() {
     let translations = {
         'infection_rate': {
             'EN': 'each infected infects another person every _ days',
-            'PL': 'wskaźnik infekcji',
+            'PL': 'osoba zarażona zaraża 1 osobę co _ dni',
         },
         'recovery_rate': {
             'EN': 'each infected recovers after _ days',
-            'PL': 'wskaźnik ozdrowień',
+            'PL': 'osoba zarażona wyzdrowieje po _ dniach',
         },
         'mortality_rate': {
             'EN': 'chance for an infected person to die each day',
-            'PL': 'wskaźnik śmiertelności',
+            'PL': 'prawdopodobieństwo że osoba zarażona umrze danego dnia',
         },
         'immunity_loss_rate': {
             'EN': 'immunity lasts on average _ days',
-            'PL': 'wskaźnik utraty odporności',
+            'PL': 'średni okres odporności wynosi _ dni',
         },
         'mask_rate': {
             'EN': 'percentage of people who wear masks',
@@ -33,16 +33,16 @@ function getTranslations() {
             'PL': 'skuteczność izolacji',
         },
         'vaccination_rate': {
-            'EN': 'people vaccinated daily per 1000 people without immunity',
-            'PL': 'wskaźnik wyszczepialności',
+            'EN': 'people vaccinated daily per 1000 susceptible people',
+            'PL': 'wskaźnik dziennej wyszczepialności (liczba osób na 1000 niezarażonych osób)',
         },
         'vaccine_efficacy': {
             'EN': 'vaccine efficacy',
-            'PL': 'skuteczność szczepień',
+            'PL': 'skuteczność szczepionki',
         },
         'time': {
             'EN': 'simulation time in days',
-            'PL': 'czas symulacji',
+            'PL': 'czas symulacji w dniach',
         },
 
 
