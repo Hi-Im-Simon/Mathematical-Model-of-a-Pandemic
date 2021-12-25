@@ -11,7 +11,7 @@ for (el of document.querySelectorAll('.row_input')) {
 
 function setChartGenerationProperty(els) {
     for (el of els)
-        el.addEventListener('input', function() { generateChart() });
+        el.addEventListener('input', function() { generateChart('chart_1', getChartData()) });
 }
 
 // connect selected input to its following input
