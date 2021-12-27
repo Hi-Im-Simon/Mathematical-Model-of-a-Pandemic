@@ -1,48 +1,48 @@
 function getTranslations() {
     let translations = {
         'infection_rate': {
-            'EN': 'each infected infects another person every _ days',
-            'PL': 'osoba zarażona zaraża 1 osobę co _ dni',
+            'EN': 'Each infected infects another person every _ days',
+            'PL': 'Osoba zarażona zaraża 1 osobę co _ dni',
         },
         'recovery_rate': {
-            'EN': 'each infected recovers after _ days',
-            'PL': 'osoba zarażona wyzdrowieje po _ dniach',
+            'EN': 'Each infected recovers after _ days',
+            'PL': 'Osoba zarażona wyzdrowieje po _ dniach',
         },
         'mortality_rate': {
-            'EN': 'chance for an infected person to die each day',
-            'PL': 'prawdopodobieństwo że osoba zarażona umrze danego dnia',
+            'EN': 'Chance for an infected person to die each day',
+            'PL': 'Prawdopodobieństwo że osoba zarażona umrze danego dnia',
         },
         'immunity_loss_rate': {
-            'EN': 'immunity lasts on average _ days',
-            'PL': 'średni okres odporności wynosi _ dni',
+            'EN': 'Immunity lasts on average _ days',
+            'PL': 'Średni okres odporności wynosi _ dni',
         },
         'mask_rate': {
-            'EN': 'percentage of people who wear masks',
-            'PL': 'odsetek osób stosujących maseczki',
+            'EN': 'Percentage of people who wear masks',
+            'PL': 'Odsetek osób stosujących maseczki',
         },
         'social_distancing_rate': {
-            'EN': 'percentage of people who isolate',
-            'PL': 'odsetek osób w izolacji',
+            'EN': 'Percentage of people who isolate',
+            'PL': 'Odsetek osób w izolacji',
         },
         'mask_effectiveness': {
-            'EN': 'mask effectivness',
-            'PL': 'skuteczność maseczek',
+            'EN': 'Mask effectiveness',
+            'PL': 'Skuteczność maseczek',
         },
         'social_distancing_effectiveness': {
-            'EN': 'social distancing effectiveness',
-            'PL': 'skuteczność izolacji',
+            'EN': 'Social distancing effectiveness',
+            'PL': 'Skuteczność izolacji',
         },
         'vaccination_rate': {
-            'EN': 'people vaccinated daily per 1000 susceptible people',
-            'PL': 'wskaźnik dziennej wyszczepialności (liczba osób na 1000 niezarażonych osób)',
+            'EN': 'People vaccinated daily per 1000 susceptible people',
+            'PL': 'Wskaźnik dziennej wyszczepialności (liczba osób na 1000 niezarażonych osób)',
         },
         'vaccine_efficacy': {
-            'EN': 'vaccine efficacy',
-            'PL': 'skuteczność szczepionki',
+            'EN': 'Vaccine efficacy',
+            'PL': 'Skuteczność szczepionki',
         },
         'time': {
-            'EN': 'simulation time in days',
-            'PL': 'czas symulacji w dniach',
+            'EN': 'Simulation time in days',
+            'PL': 'Czas symulacji w dniach',
         },
 
 
