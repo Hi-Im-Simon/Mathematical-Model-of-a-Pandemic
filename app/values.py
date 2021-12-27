@@ -6,7 +6,7 @@ init_values = {
     'mask_rate': 10,  # proportion of individuals that correctly use face masks
     'social_distancing_rate': 2,  # proportion of individuals that are isolating themselves
     'vaccination_rate': 1,  # proportion of individuals that are being vaccinated per unit of time
-    'mask_effectiveness': 5,  # projected decrease in infection rate due to masks usage 
+    'mask_effectiveness': 50,  # projected decrease in infection rate due to masks usage 
     'social_distancing_effectiveness': 85,  # projected decrease in infection rate due to isolation & distancing
     'vaccine_efficacy': 76,  # vaccine efficacy
     
