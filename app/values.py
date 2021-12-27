@@ -10,7 +10,7 @@ init_values = {
     'social_distancing_effectiveness': 85,  # projected decrease in infection rate due to isolation & distancing
     'vaccine_efficacy': 76,  # vaccine efficacy
     
-    'time': 365
+    'time': 180
 }
 
 # might need to manually create an entry in 'models.py' in case of creating a value different than integer type
