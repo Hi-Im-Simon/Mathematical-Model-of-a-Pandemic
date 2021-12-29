@@ -1,20 +1,20 @@
 function getTranslations() {
     let translations = {
         'infection_period': {
-            'EN': 'Each infected infects another person every _ days',
-            'PL': 'Osoba zarażona zaraża 1 osobę co _ dni',
+            'EN': 'Each infected infects another person every _\xa0days',
+            'PL': 'Osoba zarażona zaraża 1 osobę co _\xa0dni',
         },
         'recovery_period': {
-            'EN': 'Each infected recovers after _ days',
-            'PL': 'Osoba zarażona wyzdrowieje po _ dniach',
+            'EN': 'Each infected recovers after _\xa0days',
+            'PL': 'Osoba zarażona wyzdrowieje po _\xa0dniach',
         },
         'mortality_rate': {
             'EN': 'Chance for an infected person to die each day',
             'PL': 'Prawdopodobieństwo że osoba zarażona umrze danego dnia',
         },
         'immunity_period': {
-            'EN': 'Immunity lasts on average _ days',
-            'PL': 'Średni okres odporności wynosi _ dni',
+            'EN': 'Immunity lasts on average _\xa0days',
+            'PL': 'Średni okres odporności wynosi _\xa0dni',
         },
         'mask_rate': {
             'EN': 'Percentage of people who wear masks',
