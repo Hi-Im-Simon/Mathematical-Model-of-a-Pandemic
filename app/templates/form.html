@@ -2,13 +2,13 @@
 
 {% set column_name = 'infection_period' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="1" max="30"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="1" max="30" placeholder="1 — 30"
         value="{{ values[column_name] }}"
     >
@@ -16,13 +16,13 @@
 
 {% set column_name = 'recovery_period' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="1" max="30"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="1" max="30" placeholder="1 — 30"
         value="{{ values[column_name] }}"
     >
@@ -30,13 +30,13 @@
 
 {% set column_name = 'mortality_rate' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="0.1" min="0" max="100" 
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="0.1" min="0" max="100" placeholder="0.0 — 100.0"
         value="{{ values[column_name] }}"
     >
@@ -44,13 +44,13 @@
 
 {% set column_name = 'immunity_period' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="1" max="365"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="1" max="365" placeholder="1 — 365"
         value="{{ values[column_name] }}"
     >
@@ -58,13 +58,13 @@
 
 {% set column_name = 'mask_rate' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="0" max="100" placeholder="0 — 100"
         value="{{ values[column_name] }}"
     >
@@ -72,13 +72,13 @@
 
 {% set column_name = 'social_distancing_rate' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="0" max="100" placeholder="0 — 100"
         value="{{ values[column_name] }}"
     >
@@ -86,13 +86,13 @@
 
 {% set column_name = 'vaccination_rate_per_1k' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="0" max="100" placeholder="0 — 100"
         value="{{ values[column_name] }}"
     >
@@ -100,13 +100,13 @@
 
 {% set column_name = 'mask_effectiveness' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="0.1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="0.1" min="0" max="100" placeholder="0.0 — 100.0"
         value="{{ values[column_name] }}"
     >
@@ -114,13 +114,13 @@
 
 {% set column_name = 'social_distancing_effectiveness' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="0.1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="0.1" min="0" max="100" placeholder="0.0 — 100.0"
         value="{{ values[column_name] }}"
     >
@@ -128,13 +128,13 @@
 
 {% set column_name = 'vaccine_efficacy' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="0.1" min="0" max="100"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="0.1" min="0" max="100" placeholder="0.0 — 100.0"
         value="{{ values[column_name] }}"
     >
@@ -142,13 +142,13 @@
 
 {% set column_name = 'time' %}
 <div class="row_input">
-    <p>{{ names[column_name][language] }}</p>
+    <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <input type="range"
         name="{{ column_name }}"
         step="1" min="1" max="365"
         value="{{ values[column_name] }}"
     >
-    <input type="number"
+    <input type="number" id="{{ column_name }}"
         step="1" min="1" max="365" placeholder="1 — 365"
         value="{{ values[column_name] }}"
     >
