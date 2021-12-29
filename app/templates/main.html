@@ -30,20 +30,23 @@
                         <canvas class="chart" id="chart_1"></canvas>
                     </div>
                     <div id="chart_2_container">
+                        <div class="chart_controls">
+                            <img src="../static/images/arrow-left.png" alt="Left" class="button_left button" onclick="switch_chart('left')"></button>
+                            <span id="chart_id"></span>
+                            <img src="../static/images/arrow-right.png" alt="Right" class="button_right button" onclick="switch_chart('right')"></button>
+                        </div>
                         <canvas class="chart" id="chart_2"></canvas>
-                        <center>
-                            <button class="button_left" onclick="switch_chart('left')"><</button>
-                            <button class="button_right" onclick="switch_chart('right')">></button>
-                        </center>
-                        <center><div id="chart_id"></div></center>
                     </div>
                 </div>
             </div>
             <p>{{ names['more_info_1'][language] }} <a href="../static/docs/A_Mathematical_Model_of_a_Pandemic.pdf">{{ names['more_info_2'][language] }} [PDF]</a>.</p>
         </main>
         <footer>
-            <p>{{ names['footer_made_by'][language] }}:</p>
-            <p>Mikołaj Bartkowiak &bullet; Szymon Stanisławski</p>
+            <h3>{{ names['footer_made_by'][language] }}:</h3>
+            <ul>
+                <li>Mikołaj Bartkowiak</li>
+                <li>Szymon Stanisławski</li>
+            </ul>
         </footer>
     </div>
 </body>
