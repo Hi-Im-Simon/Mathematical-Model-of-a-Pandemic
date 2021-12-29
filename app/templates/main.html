@@ -12,9 +12,10 @@
     <div class="container">
         <header>
             <form action="/" method="POST" id="choose_language">
+                {{ names['language'][language] }}:&nbsp;
                 <input type="text" name="language" style="display: none" value="EN">
-                <input type="submit" value="EN" onclick="document.getElementsByName('language')[0].value = 'EN'">
-                <input type="submit" value="PL" onclick="document.getElementsByName('language')[0].value = 'PL'">
+                <input type="image" src="../static/images/flag_en.png" alt="EN" onclick="document.getElementsByName('language')[0].value = 'EN'">
+                <input type="image" src="../static/images/flag_pl.png" alt="PL" onclick="document.getElementsByName('language')[0].value = 'PL'">
             </form>
             <h1>{{ names['header_title'][language] }}</h1>
         </header>

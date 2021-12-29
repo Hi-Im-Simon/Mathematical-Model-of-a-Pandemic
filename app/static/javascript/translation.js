@@ -1,5 +1,10 @@
 function getTranslations() {
     let translations = {
+        'language': {
+            'EN': 'Language',
+            'PL': 'Język',
+        },
+
         'infection_period': {
             'EN': 'Each infected infects another person every _\xa0days',
             'PL': 'Osoba zarażona zaraża 1 osobę co _\xa0dni',
