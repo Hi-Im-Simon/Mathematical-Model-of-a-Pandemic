@@ -48,7 +48,7 @@ body {
 }
 
 a, a:visited {
-    color: navy;
+    color: teal;
     text-decoration: none;
 }
 
@@ -103,8 +103,16 @@ main {
     border-right: none;
 }
 
+.left:first-child {
+    padding-top: 15px;
+}
+
 .row_input p {
     margin-bottom: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .left input[type=number] {
@@ -112,7 +120,7 @@ main {
     -moz-appearance: textfield;
     appearance: textfield;
     border: none;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid lightgrey;
     background: none;
     width: 6em;
 }
@@ -136,6 +144,25 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     color: red;
 }
 
+.button_container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.button_container input[type=submit] {
+    border: none;
+    background-color: lightgrey;
+    font-size: 140%;
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.button_container input[type=submit]:hover {
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+}
+
 .right {
     width: 74%;
     border: 1px solid grey;
@@ -152,10 +179,10 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 .chart_controls {
     padding: 15px 20px 5px;
-}
-
-.chart_id {
-    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button {
