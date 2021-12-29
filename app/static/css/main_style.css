@@ -115,6 +115,18 @@ main {
     user-select: none;
 }
 
+.left input[type=range]::-webkit-slider-thumb {
+    cursor: grab;
+}
+
+.left input[type=range]::-moz-range-thumb {
+    cursor: grab;
+}
+
+.left input[type=range]::-ms-thumb {
+    cursor: grab;
+}
+
 .left input[type=number] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
