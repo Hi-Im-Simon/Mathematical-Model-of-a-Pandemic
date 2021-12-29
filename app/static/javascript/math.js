@@ -10,13 +10,13 @@ function calc(data) {
     let N_0 = S + I + R + D + V;  // max initial population size
     let N = S + I + R + V;  // total alive population size
     
-    infection_rate = 1 / data.get('infection_rate');
-    recovery_rate = 1 / data.get('recovery_rate');
+    infection_rate = 1 / data.get('infection_period');
+    recovery_rate = 1 / data.get('recovery_period');
     mortality_rate = data.get('mortality_rate') * 0.01 * recovery_rate;
-    immunity_loss_rate = 1 / data.get('immunity_loss_rate');
+    immunity_loss_rate = 1 / data.get('immunity_period');
     mask_rate = data.get('mask_rate') / 100;
     social_distancing_rate = data.get('social_distancing_rate') / 100;
-    vaccination_rate = data.get('vaccination_rate') / 1000;
+    vaccination_rate = data.get('vaccination_rate_per_1k') / 1000;
     mask_effectiveness = data.get('mask_effectiveness') / 100;
     social_distancing_effectiveness = data.get('social_distancing_effectiveness') / 100;
     vaccine_efficacy = data.get('vaccine_efficacy') / 100;

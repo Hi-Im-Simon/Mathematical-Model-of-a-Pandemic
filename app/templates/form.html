@@ -1,6 +1,6 @@
 <form action="/" method="POST" id="input_form">
 
-{% set column_name = 'infection_rate' %}
+{% set column_name = 'infection_period' %}
 <div class="row_input">
     <p>{{ names[column_name][language] }}</p>
     <input type="range"
@@ -14,7 +14,7 @@
     >
 </div>
 
-{% set column_name = 'recovery_rate' %}
+{% set column_name = 'recovery_period' %}
 <div class="row_input">
     <p>{{ names[column_name][language] }}</p>
     <input type="range"
@@ -42,7 +42,7 @@
     >
 </div>
 
-{% set column_name = 'immunity_loss_rate' %}
+{% set column_name = 'immunity_period' %}
 <div class="row_input">
     <p>{{ names[column_name][language] }}</p>
     <input type="range"
@@ -84,7 +84,7 @@
     >
 </div>
 
-{% set column_name = 'vaccination_rate' %}
+{% set column_name = 'vaccination_rate_per_1k' %}
 <div class="row_input">
     <p>{{ names[column_name][language] }}</p>
     <input type="range"
