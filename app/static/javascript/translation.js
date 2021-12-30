@@ -78,8 +78,8 @@ function getTranslations() {
 
 
         'submit_button': {
-            'EN': 'Submit',
-            'PL': 'Wyślij',
+            'EN': 'Save chart',
+            'PL': 'Zapisz wykres',
         },
         'title': {
             'EN': 'Main page — A Mathematical Model of a Pandemic',
