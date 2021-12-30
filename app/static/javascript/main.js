@@ -1,7 +1,7 @@
 // set properties of inputs
 for (el of document.querySelectorAll('.row_input')) {
     let children = []
-    for (child of el.children)
+    for (child of el.querySelectorAll('*'))
         if (child instanceof HTMLInputElement)
             children.push(child)
 
