@@ -107,7 +107,7 @@ main {
     padding-top: 15px;
 }
 
-.row_input p {
+.row-input p {
     margin-bottom: 0;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -211,12 +211,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     color: red;
 }
 
-.button_container {
+.button-container {
     margin-top: 50px;
     text-align: center;
 }
 
-.button_container input[type=submit] {
+.button-container input[type=submit] {
     border: none;
     background-color: lightgrey;
     font-size: 140%;
@@ -224,7 +224,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     text-align: center;
 }
 
-.button_container input[type=submit]:hover {
+.button-container input[type=submit]:hover {
     background-color: teal;
     color: white;
     cursor: pointer;
@@ -235,16 +235,16 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     border: 1px solid grey;
 }
 
-#chart_1 {
+#chart-1 {
     padding: 15px;
     border-bottom: 1px solid grey;
 }
 
-#chart_2 {
+#chart-2 {
     padding: 15px;
 }
 
-.chart_controls {
+.chart-controls {
     padding: 15px 20px 5px;
     -webkit-user-select: none;
     -moz-user-select: none;

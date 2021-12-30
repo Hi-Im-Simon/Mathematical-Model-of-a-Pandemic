@@ -69,7 +69,7 @@ function switch_chart(dest) {
     for (entry in db)
         data_set.set(entry, db[entry][data_set_i]);
     let x_values = Array.from(Array(+(data_set.get('time')) + 1).keys());
-    generateChart(chart_name = 'chart_2', data = [x_values, calc(data_set)], action = 'update');
+    generateChart(chart_name = 'chart-2', data = [x_values, calc(data_set)], action = 'update');
     document.getElementById('chart_id').innerHTML = data_set_i + 1;
 }
 
@@ -77,5 +77,5 @@ var data_set_i = db['id'].length - 1;
 document.getElementById('chart_id').innerHTML = db['id'].length;
 
 var charts = {};
-generateChart(chart_name='chart_1', data=getChartData(), action='create');
-generateChart(chart_name='chart_2', data=getChartData(), action='create');
+generateChart(chart_name='chart-1', data=getChartData(), action='create');
+generateChart(chart_name='chart-2', data=getChartData(), action='create');

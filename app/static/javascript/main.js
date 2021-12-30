@@ -1,5 +1,5 @@
 // set properties of inputs
-for (el of document.querySelectorAll('.row_input')) {
+for (el of document.querySelectorAll('.row-input')) {
     let children = []
     for (child of el.querySelectorAll('*'))
         if (child instanceof HTMLInputElement)
@@ -11,7 +11,7 @@ for (el of document.querySelectorAll('.row_input')) {
 
 function setChartGenerationProperty(els) {
     for (el of els)
-        el.addEventListener('input', function() { generateChart('chart_1', getChartData()) });
+        el.addEventListener('input', function() { generateChart('chart-1', getChartData()) });
 }
 
 // connect selected input to its following input

@@ -1,7 +1,7 @@
 <form action="/" method="POST" id="input_form">
 
 {% set column_name = 'infection_period' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -17,7 +17,7 @@
 </div>
 
 {% set column_name = 'recovery_period' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -33,7 +33,7 @@
 </div>
 
 {% set column_name = 'mortality_rate' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -49,7 +49,7 @@
 </div>
 
 {% set column_name = 'immunity_period' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -65,7 +65,7 @@
 </div>
 
 {% set column_name = 'mask_rate' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -81,7 +81,7 @@
 </div>
 
 {% set column_name = 'social_distancing_rate' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -97,7 +97,7 @@
 </div>
 
 {% set column_name = 'vaccination_rate_per_1k' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -113,7 +113,7 @@
 </div>
 
 {% set column_name = 'mask_effectiveness' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -129,7 +129,7 @@
 </div>
 
 {% set column_name = 'social_distancing_effectiveness' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -145,7 +145,7 @@
 </div>
 
 {% set column_name = 'vaccine_efficacy' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -161,7 +161,7 @@
 </div>
 
 {% set column_name = 'time' %}
-<div class="row_input">
+<div class="row-input">
     <label for="{{ column_name }}"><p>{{ names[column_name][language] }}</p></label>
     <div class="flex-container">
         <input type="range"
@@ -176,7 +176,7 @@
     </div>
 </div>
 
-<div class="button_container">
+<div class="button-container">
     <input type="submit" value="{{ names['submit_button'][language] }}">
 </div>
 
