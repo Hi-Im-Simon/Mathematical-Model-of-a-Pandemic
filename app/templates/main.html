@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="{{language}}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,9 +12,10 @@
     <div class="container">
         <header>
             <form action="/" method="POST" id="choose_language">
+                {{ names['language'][language] }}:&nbsp;
                 <input type="text" name="language" style="display: none" value="EN">
-                <input type="submit" value="EN" onclick="document.getElementsByName('language')[0].value = 'EN'">
-                <input type="submit" value="PL" onclick="document.getElementsByName('language')[0].value = 'PL'">
+                <input type="image" src="../static/images/flag_en.png" alt="EN" onclick="document.getElementsByName('language')[0].value = 'EN'">
+                <input type="image" src="../static/images/flag_pl.png" alt="PL" onclick="document.getElementsByName('language')[0].value = 'PL'">
             </form>
             <h1>{{ names['header_title'][language] }}</h1>
         </header>
@@ -25,24 +26,27 @@
                 </div>
     
                 <div class="right">
-                    <div id="chart_1_container">
-                        <canvas class="chart" id="chart_1"></canvas>
+                    <div id="chart-1-container">
+                        <canvas class="chart" id="chart-1"></canvas>
                     </div>
-                    <div id="chart_2_container">
-                        <canvas class="chart" id="chart_2"></canvas>
-                        <center>
-                            <button class="button_left" onclick="switch_chart('left')"><</button>
-                            <button class="button_right" onclick="switch_chart('right')">></button>
-                        </center>
-                        <center><div id="chart_id"></div></center>
+                    <div id="chart-2-container">
+                        <div class="chart-controls">
+                            <img src="../static/images/arrow-left.png" alt="Left" class="button-left button" onclick="switch_chart('left')"></button>
+                            <span id="chart_id"></span>
+                            <img src="../static/images/arrow-right.png" alt="Right" class="button-right button" onclick="switch_chart('right')"></button>
+                        </div>
+                        <canvas class="chart" id="chart-2"></canvas>
                     </div>
                 </div>
             </div>
             <p>{{ names['more_info_1'][language] }} <a href="../static/docs/A_Mathematical_Model_of_a_Pandemic.pdf">{{ names['more_info_2'][language] }} [PDF]</a>.</p>
         </main>
         <footer>
-            <p>{{ names['footer_made_by'][language] }}:</p>
-            <p>Mikołaj Bartkowiak &bullet; Szymon Stanisławski</p>
+            <h3>{{ names['footer_made_by'][language] }}:</h3>
+            <ul>
+                <li>Mikołaj Bartkowiak</li>
+                <li>Szymon Stanisławski</li>
+            </ul>
         </footer>
     </div>
 </body>
