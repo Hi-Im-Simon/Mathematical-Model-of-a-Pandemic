@@ -115,17 +115,71 @@ main {
     user-select: none;
 }
 
-.left input[type=range]::-webkit-slider-thumb {
-    cursor: grab;
+.left input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
 }
 
-.left input[type=range]::-moz-range-thumb {
-    cursor: grab;
-}
+/* Range thumb */
+    /* Chrome */
+    .left input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 8px;
+        width: 8px;
+        background: white;
+        border: 1px solid grey;
+        margin-top: 0px; 
+        cursor: grab;
+    }
+    /* Mozilla */
+    .left input[type=range]::-moz-range-thumb {
+        height: 8px;
+        width: 8px;
+        border: none;
+        border-radius: 0;
+        background: white;
+        border: 1px solid grey;
+        margin-top: 0px;
+        cursor: grab;
+    }
+    /* IE */
+    .left input[type=range]::-ms-thumb {
+        height: 8px;
+        width: 8px;
+        background: white;
+        border: 1px solid grey;
+        margin-top: 0px;
+        cursor: grab;
+    }
 
-.left input[type=range]::-ms-thumb {
-    cursor: grab;
-}
+/* Range slider */
+    /* Chrome */
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: rgb(32, 160, 160);
+    }
+    /* Mozilla */
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: rgb(32, 160, 160);
+    }
+    /* IE */
+    input[type=range]::-ms-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: transparent; 
+        border-color: transparent;
+        color: transparent;
+    }
+    input[type=range]::-ms-fill {
+        background: rgb(32, 160, 160);
+    }
 
 .left input[type=number] {
     -webkit-appearance: textfield;
@@ -135,6 +189,7 @@ main {
     border-bottom: 1px solid lightgrey;
     background: none;
     width: 6em;
+    margin-left: 5px;
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { 
