@@ -78,4 +78,6 @@ document.getElementById('chart_id').innerHTML = db['id'].length;
 
 var charts = {};
 generateChart(chart_name='chart-1', data=getChartData(), action='create');
-generateChart(chart_name='chart-2', data=getChartData(), action='create');
+
+if (db['id'].length > 0)
+    generateChart(chart_name='chart-2', data=getChartData(), action='create');
