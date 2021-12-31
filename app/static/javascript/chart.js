@@ -53,6 +53,26 @@ function generateChart(chart_name, data, action = 'update') {
     }
     charts[chart_name].data.labels = x_values;
     charts[chart_name].update();
+
+    R_zero = y_values_all.R_zero;
+    R_e = y_values_all.R_e;
+    herd_immunity = y_values_all.herd_immunity;
+    
+    let element = document.querySelector(`#${chart_name}-parameters`);
+    for (child of element.querySelectorAll('*')) {
+        switch(child.id) {
+            case 'R-zero':
+                child.innerHTML = R_zero.toFixed(2);
+                break;
+            case 'R-e':
+                child.innerHTML = R_e.toFixed(2);
+                break;
+            case 'herd-immunity':
+                child.innerHTML = herd_immunity;
+                break;
+            default: break;
+        }
+    }
 }
 
 // switches the comparison chart left or right
@@ -79,5 +99,8 @@ document.getElementById('chart_id').innerHTML = db['id'].length;
 var charts = {};
 generateChart(chart_name='chart-1', data=getChartData(), action='create');
 
-if (db['id'].length > 0)
+if (db['id'].length > 0) {
     generateChart(chart_name='chart-2', data=getChartData(), action='create');
+    document.querySelector('#chart-2-parameters').style.display = 'initial';
+    document.querySelector('#chart-controls').style.display = 'initial';
+}

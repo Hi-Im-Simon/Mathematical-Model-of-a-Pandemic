@@ -22,6 +22,19 @@ function calc(data) {
     vaccine_efficacy = data.get('vaccine_efficacy') / 100;
     time = data.get('time');
 
+    let R_zero = infection_rate / (recovery_rate + mortality_rate);  // basic reproduction number
+    let R_e = (infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (S / N) + infection_rate * (1 - mask_effectiveness * mask_rate) * (1 - social_distancing_effectiveness * social_distancing_rate) * (1 - vaccine_efficacy) * (V / N)) / (recovery_rate + mortality_rate);  // effective reproduction number
+    let herd_immunity = 100 * (1 - (1 / R_zero)) / vaccine_efficacy;  // herd immunity
+
+    if (herd_immunity > 100) {
+        herd_immunity = '∞';
+    } else if (herd_immunity < 0) {
+        herd_immunity = '0%';
+    } else {
+        herd_immunity = herd_immunity.toFixed(0);
+        herd_immunity += '%';
+    }
+
     let S_out = [S], I_out = [I], R_out = [R], D_out = [D], V_out = [V], N_out = [N];
 
     for (let _ = 0; _ < time; _++) {
@@ -35,5 +48,5 @@ function calc(data) {
         S_out.push(S); I_out.push(I); R_out.push(R); D_out.push(D); V_out.push(V); N_out.push(N);
     }
     
-    return { 'S': S_out, 'I': I_out, 'R': R_out, 'D': D_out, 'V': V_out, 'N': N_out };
+    return { 'S': S_out, 'I': I_out, 'R': R_out, 'D': D_out, 'V': V_out, 'N': N_out, 'R_zero': R_zero, 'R_e': R_e, 'herd_immunity': herd_immunity };
 }
