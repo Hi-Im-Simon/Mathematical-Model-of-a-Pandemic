@@ -43,6 +43,10 @@
     font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
+html {
+    background: #bababa;
+}
+
 body {
     background: url('../images/dot-grid.png') repeat;
 }
