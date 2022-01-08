@@ -34,6 +34,6 @@ function calc(data) {
 
         S_out.push(S); I_out.push(I); R_out.push(R); D_out.push(D); V_out.push(V); N_out.push(N);
     }
-    console.log(S_out)
+    
     return { 'S': S_out, 'I': I_out, 'R': R_out, 'D': D_out, 'V': V_out, 'N': N_out };
 }
