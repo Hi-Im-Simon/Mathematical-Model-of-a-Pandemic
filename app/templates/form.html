@@ -88,11 +88,11 @@
     <div class="flex-container">
         <input type="range"
             name="{{ column_name }}"
-            step="1" min="1" max="365"
+            step="1" min="0" max="365"
             value="{{ values[column_name] }}"
         >
         <input type="number" id="{{ column_name }}"
-            step="1" min="1" max="365" placeholder="1 — 365"
+            step="1" min="0" max="365" placeholder="0 — 365"
             value="{{ values[column_name] }}"
         >
     </div>

@@ -13,7 +13,7 @@ function calc(data) {
     infection_rate = 1 / data.get('infection_period');
     recovery_rate = 1 / data.get('recovery_period');
     mortality_rate = data.get('mortality_rate') * 0.01 * recovery_rate;
-    immunity_loss_rate = 1 / data.get('immunity_period');
+    immunity_loss_rate = data.get('immunity_period') > 0 ? 1 / data.get('immunity_period') : 0; // if immunity_period > 0, return 1 / immunity_period, else return 0
     mask_rate = data.get('mask_rate') / 100;
     social_distancing_rate = data.get('social_distancing_rate') / 100;
     vaccination_rate = data.get('vaccination_rate_per_1k') / 1000;
