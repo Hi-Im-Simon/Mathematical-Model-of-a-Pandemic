@@ -1,8 +1,8 @@
 function calc(data) {
     let Tp = 1;  // sampling interval in days, assume default = 1 day
 
-    let S = 1368048;  // susceptible compartment
-    let I = 50;  // infected compartment
+    let S = +data.get('susceptible_count');  // susceptible compartment
+    let I = +data.get('infected_count');  // infected compartment
     let R = 0;  // recovered compartment
     let D = 0;  // deceased compartment
     let V = 0;  // vaccinated compartment
@@ -34,6 +34,6 @@ function calc(data) {
 
         S_out.push(S); I_out.push(I); R_out.push(R); D_out.push(D); V_out.push(V); N_out.push(N);
     }
-    
+    console.log(S_out)
     return { 'S': S_out, 'I': I_out, 'R': R_out, 'D': D_out, 'V': V_out, 'N': N_out };
 }

@@ -5,6 +5,14 @@ function getTranslations() {
             'PL': 'Język',
         },
 
+        'susceptible_count': {
+            'EN': 'TO BE NAMED (susceptible_count)',
+            'PL': 'TO BE NAMED (susceptible_count)',
+        },
+        'infected_count': {
+            'EN': 'TO BE NAMED (infected_count)',
+            'PL': 'TO BE NAMED (infected_count)',
+        },
         'infection_period': {
             'EN': 'Each infected infects another person every _\xa0days',
             'PL': 'Osoba zarażona zaraża 1 osobę co _\xa0dni',
@@ -49,8 +57,6 @@ function getTranslations() {
             'EN': 'Simulation time in days',
             'PL': 'Czas symulacji w dniach',
         },
-
-
         'S': {
             'EN': 'Susceptible',
             'PL': 'Niezakażeni',
