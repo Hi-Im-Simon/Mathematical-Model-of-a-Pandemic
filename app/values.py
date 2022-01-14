@@ -2,7 +2,6 @@ init_values = {
     'susceptible_count': 1368000,
     'infected_count': 50,
     
-    
     'infection_period': 4,  # how often transmission happens [days]
     'recovery_period': 12,  # recovery period [days]
     'mortality_rate': 1,  # infection mortality rate [%]
