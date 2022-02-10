@@ -83,6 +83,16 @@ function getTranslations() {
         },
 
 
+        'is': {
+            'EN': 'is',
+            'PL': 'wynosi',
+        },
+        'herd_immunity_threshold': {
+            'EN': 'Herd immunity threshold',
+            'PL': 'Wskaźnik odporności zbiorowej',
+        },
+
+
         'submit_button': {
             'EN': 'Save chart',
             'PL': 'Zapisz wykres',

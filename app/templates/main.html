@@ -28,14 +28,24 @@
                 <div class="right">
                     <div id="chart-1-container">
                         <canvas class="chart" id="chart-1"></canvas>
+                        <div id="chart-1-parameters">
+                            <p>R<sub>0</sub> {{ names['is'][language] }} <span id="R-zero"></span></p>
+                            <p>R<sub>e</sub> {{ names['is'][language] }} <span id="R-e"></span></p>
+                            <p>{{ names['herd_immunity_threshold'][language] }} {{ names['is'][language] }} <span id="herd-immunity"></span></p>
+                        </div>
                     </div>
                     <div id="chart-2-container">
-                        <div class="chart-controls">
+                        <div id="chart-controls">
                             <img src="../static/images/arrow-left.png" alt="Left" class="button-left button" onclick="switch_chart('left')"></button>
                             <span id="chart_id"></span>
                             <img src="../static/images/arrow-right.png" alt="Right" class="button-right button" onclick="switch_chart('right')"></button>
                         </div>
                         <canvas class="chart" id="chart-2"></canvas>
+                        <div id="chart-2-parameters">
+                            <p>R<sub>0</sub> {{ names['is'][language] }} <span id="R-zero"></span></p>
+                            <p>R<sub>e</sub> {{ names['is'][language] }} <span id="R-e"></span></p>
+                            <p>{{ names['herd_immunity_threshold'][language] }} {{ names['is'][language] }} <span id="herd-immunity"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
