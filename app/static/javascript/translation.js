@@ -6,12 +6,12 @@ function getTranslations() {
         },
 
         'susceptible_count': {
-            'EN': 'TO BE NAMED (susceptible_count)',
-            'PL': 'TO BE NAMED (susceptible_count)',
+            'EN': 'Susceptible count',
+            'PL': 'Liczba osób podatnych',
         },
         'infected_count': {
-            'EN': 'TO BE NAMED (infected_count)',
-            'PL': 'TO BE NAMED (infected_count)',
+            'EN': 'Infected count',
+            'PL': 'Liczba osób zarażonych',
         },
         'infection_period': {
             'EN': 'Each infected infects another person every _\xa0days',
